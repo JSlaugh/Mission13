@@ -2,3 +2,8 @@ h1 {
   font-family: fantasy;
   font-weight: 900;
 }
+
+.widthLimit {
+  width: 80%;
+  margin: auto;
+}

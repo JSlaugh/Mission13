@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
 import Header from './Components/Header';
-import DataTable from './Components/Movies';
+import { Outlet } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
       <Header />
-      <DataTable />
+      <div className="widthLimit">
+        {/* This is the location where all of the extra components are thrown in */}
+        <Outlet />
+      </div>
     </div>
   );
 }

@@ -5,12 +5,26 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Styles/styles.css';
+import Home from './Components/Home';
+import Movies from './Components/Movies';
+import Podcast from './Components/Podcasts';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          {/* Children are added if the path matches up by default Home page is loaded
+          They are slotted into the App Component */}
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/Podcast" element={<Podcast />}></Route>
+          <Route path="/Movies" element={<Movies />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
 );
 
