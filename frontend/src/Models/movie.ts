@@ -1,11 +1,12 @@
+// We all need a Class
 export type Movie = {
-  MovieId: number;
-  Category: string;
-  Title: string;
-  Year: Date;
-  Director: string;
-  Rating: string;
-  Edited: boolean;
-  LentTo: string;
-  Notes: string;
+  movieId: number;
+  category: string;
+  title: string;
+  year: string;
+  director: string;
+  rating: string;
+  edited: string;
+  lentTo: string;
+  notes: string;
 };
