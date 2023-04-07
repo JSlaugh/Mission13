@@ -1,25 +1,19 @@
-import { useState } from 'react';
-import data from '../Data/MovieDataSample.json';
+import { useEffect, useState } from 'react';
 
-const MDS = data.MovieDataSample;
+import { Movie } from '../Models/movie';
 
 function MovieList() {
-  const [listOfMovies, setListOfMovies] = useState(MDS);
+  const [listOfMovies, setListOfMovies] = useState<Movie[]>([]);
 
-  const addMovies = () => {
-    setListOfMovies([
-      ...MDS,
-      {
-        MovieId: 6,
-        Category: 'Action/Adventure',
-        Title: 'Batman Returns',
-        Year: 1992,
-        Director: 'Tim Burton',
-        Rating: 'PG-13',
-      },
-    ]);
-  };
+  useEffect(() => {
+    const fetchFood = async () => {
+      const rsp = await fetch('https://localhost:5001/movie');
+      const temp = await rsp.json();
+      setListOfMovies(temp);
+    };
 
+    fetchFood();
+  }, []);
   return (
     <div>
       <h2>Joel Hilton's Movie Collection</h2>
@@ -47,9 +41,6 @@ function MovieList() {
           </tbody>
         </table>
       </div>
-      <button className="btn btn-primary" onClick={addMovies}>
-        Add Movie
-      </button>
     </div>
   );
 }
