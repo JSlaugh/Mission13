@@ -7,11 +7,11 @@ using WebApplication1.Model;
 
 namespace WebApplication1
 {
-    public class FoodDbContext : DbContext
+    public class MovieDbContext : DbContext
     {
 
-        public FoodDbContext( DbContextOptions<FoodDbContext> options): base(options) { }
+        public MovieDbContext( DbContextOptions<MovieDbContext> options): base(options) { }
         
-        public DbSet<Food> Foods { get; set; }
+        public DbSet<Movie> Movies { get; set; }
     }
 }

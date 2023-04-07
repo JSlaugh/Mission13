@@ -9,16 +9,16 @@ namespace WebApplication1.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class FoodController : Controller
+    public class MovieController : Controller
     {
-        private FoodDbContext context;
-        public FoodController(FoodDbContext temp)
+        private MovieDbContext context;
+        public MovieController(MovieDbContext temp)
         {
             context = temp;
         }
-        public IEnumerable<Food> Get()
+        public IEnumerable<Movie> Get()
         {
-            return context.Foods.ToArray();
+            return context.Movies.ToArray();
         }
     }
 }

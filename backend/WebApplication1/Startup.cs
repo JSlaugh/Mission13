@@ -29,9 +29,9 @@ namespace WebApplication1
         {
 
             services.AddControllers();
-            services.AddDbContext<FoodDbContext>(options =>
+            services.AddDbContext<MovieDbContext>(options =>
             {
-                options.UseSqlite(Configuration["ConnectionStrings:FoodDBConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:MovieDBConnection"]);
             });
             services.AddCors();
             services.AddSwaggerGen(c =>

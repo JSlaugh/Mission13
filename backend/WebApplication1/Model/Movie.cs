@@ -6,16 +6,26 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Model
 {
-    public class Food
+    public class Movie
     {
 
         [Key]
-        public int FoodId { get; set; }
-        public string EventName { get; set; }
+        public int MovieId { get; set; }
+        public string Category { get; set; }
         
-        public string Vendor { get; set; }
+        public string Title { get; set; }
 
-        public int Rating { get; set; }
+        public DateTime Year { get; set; }
+        public string Director { get; set; }
+
+        public string Rating { get; set; }
+
+        public bool Edited { get; set; }
+
+        public string LentTo { get; set; }
+        public string Notes { get; set; }
+
+
 
     }
 }
